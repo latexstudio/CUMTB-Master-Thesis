@@ -6,6 +6,9 @@
 2. 使用XeLaTeX编译两次
 
 
-测试平台：windows 8.1 64位
+测试平台：
+windows 8.1 64位
+
+
 说明：
 使用xelatex而不使用pdflatex是为了跨平台而不需要更改源文件，因此本模板在Linux和MacOS上编译都是没有问题的，如有问题欢迎在Issues下面留言。 
