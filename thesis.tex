@@ -1,41 +1,60 @@
 % !TEX TS-program = xelatex
 % !TEX encoding = UTF-8
-\documentclass[a4paper,11pt,twoside,fontset=windowsnew]{ctexart} 
+% 编译顺序 xelatex + bibtex + xelatex  + xelatex 
+
+\documentclass[a4paper,11pt,twoside]{ctexart} 
 \setmainfont{Times New Roman}  %% 设置英文字体
 \usepackage[left=3.0cm, right=3.0cm, top=3.0cm, bottom=3.0cm]{geometry} %% 版面设置
+\usepackage[backref,colorlinks,linkcolor=black,citecolor=black,
+pdfauthor={黄湘云},
+pdfkeywords={空间广义线性混合模型,马尔科夫链蒙特卡罗},
+pdfsubject={中国矿业大学（北京）硕士学位论文},
+pdftitle={空间广义线性混合效应模型及其应用}
+]{hyperref}   % 设置链接
 
 \usepackage{lipsum}  %% 提供一些示列文本，有自己的正文内容后就注释掉
 
-\usepackage{fancyhdr} %定义一般页面的页眉和页脚
+%定义一般页面的页眉和页脚
+\usepackage{fancyhdr} 
 \pagestyle{fancy}
 \fancyhf{}
-\renewcommand{\headrule}{
-\hrule width\headwidth \vspace{1pt}\hrule width\headwidth}
+\renewcommand{\headrule}{\hrule width\headwidth \vspace{1.5pt}\hrule width\headwidth}
 \fancyhead[EC]{\kaishu 中国矿业大学~(北京) 硕士学位论文}
 \fancyhead[OC]{\kaishu \leftmark}
 \fancyfoot[C]{\thepage}
 
+\usepackage[super,square]{natbib} %  参考文献
+
 \begin{document}
-%% 提供一些示列文本，有自己的正文内容后就注释掉或删掉
+
+% 如果某章的长度是奇数页，就要在章末添加空白页
+% 每一章从\newpage开始
+
 % 不要将所有的内容都放在一个tex文件下
 % 推荐如下方式，将每个章节拆成独立的tex文件 
 
-\input{00_template.tex}
-\input{00_abstract.tex}
-\input{01_Intro.tex} % 第一章
-% \input{02_model.tex} % 第二章
+\input{chapters/00_template.tex}  % 封面到版权页
+\input{chapters/00_abstract.tex}  % 摘要
+
+%% 目录
+\newpage
+\tableofcontents
 
 
-\lipsum[1]
-\lipsum[2]
-\lipsum[3]
-\lipsum[4]
-\lipsum[5]
-\lipsum[6]
-\lipsum[7]
-\lipsum[8]
-\lipsum[9]
-\lipsum[10]
+\input{chapters/01_Intro.tex} % 第一章
+\input{chapters/02_model.tex} % 第二章
+
+
+
+
+
+
+
+
+\input{chapters/ref.tex}     % 参考文献
+\input{chapters/thanks.tex}  % 致谢
+\input{chapters/author.tex}  % 作者简介 
+
 
 
 \end{document}
