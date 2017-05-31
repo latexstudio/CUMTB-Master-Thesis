@@ -3,7 +3,7 @@
 
 使用注意事项：
 1. 安装TexLive 2016
-2. 使用XeLaTeX编译两次
+2. 使用XeLaTeX+bibtex+XeLaTeX+XeLaTeX编译顺序
 
 
 测试平台：
